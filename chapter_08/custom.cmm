@@ -1,0 +1,10 @@
+B::
+
+PRIVATE &E_Func &E_Args
+ENTRY &E_Func %LINE &E_Args
+PRIVATE &ret
+
+DO ../prj_custom.cmm &E_Func &E_Args
+ENTRY %LINE &ret
+
+ENDDO &ret

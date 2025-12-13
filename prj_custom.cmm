@@ -1,0 +1,30 @@
+B::
+
+PRIVATE &E_Func &E_Args
+ENTRY &E_Func %LINE &E_Args
+PRIVATE &ret
+
+GOSUB &E_Func &E_Args
+ENTRY %LINE &ret
+
+ENDDO &ret
+
+on_init_soc:
+(
+  SYStem.GDBconfig GDBSERVER OFF
+  SYStem.GDBconfig EXTENDED OFF
+
+  Break.SELect Program SOFT
+
+  &G_RCN_Baremetal_GDB_Port="localhost:2331"
+  SYStem.PORT &G_RCN_Baremetal_GDB_Port
+
+  RETURN
+)
+
+on_main:
+(
+  sYmbol.SourcePATH.SetRecurseDir &G_RCN_PWD
+
+  RETURN
+)
