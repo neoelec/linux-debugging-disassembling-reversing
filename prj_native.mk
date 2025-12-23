@@ -7,10 +7,6 @@ MK_RACCOON_DIR		:= $(I_HDD00)/08.PROJECT/mk-raccoon
 CFLAGS			+= -Wextra
 CFLAGS			+= -Wno-unused-parameter
 CFLAGS			+= -Wno-unused-result
-CFLAGS			+= -fsanitize=undefined
-CFLAGS			+= -fno-sanitize-recover=all
-
-LDFLAGS			+= -lubsan
 
 OPT			?= 0
 
