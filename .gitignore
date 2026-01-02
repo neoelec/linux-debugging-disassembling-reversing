@@ -4,6 +4,6 @@
 .gdb_history
 .gdbinit
 .vscode/
-bin/
-obj/
+bin_*/
+obj_*/
 target.cmm
