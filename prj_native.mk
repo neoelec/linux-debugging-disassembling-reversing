@@ -4,7 +4,7 @@ PRJ_NATIVE_MK_DIR	:= $(shell dirname $(PRJ_NATIVE_MK_FILE))
 I_HDD00			:= $(HOME)/iHDD00
 MK_RACCOON_DIR		:= $(I_HDD00)/08.PROJECT/mk-raccoon
 
-HOSTYPE			:= $(shell uname -m)
+HOSTYPE			?= $(shell uname -m)
 
 BINDIR			:= bin/$(HOSTYPE)
 OBJDIR			:= obj/$(HOSTYPE)
