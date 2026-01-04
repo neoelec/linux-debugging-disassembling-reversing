@@ -61,6 +61,7 @@ apt install -y \
     lld \
     llvm \
     openssh-server \
+    strace \
     uftrace \
     vim \
     xxd \
