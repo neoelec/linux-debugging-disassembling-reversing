@@ -11,12 +11,20 @@ ENDDO &ret
 
 on_init_soc:
 (
+  PRIVATE &gdbserver_port
+
   SYStem.GDBconfig GDBSERVER OFF
   SYStem.GDBconfig EXTENDED OFF
 
   Break.SELect Program SOFT
 
-  &G_RCN_Baremetal_GDB_Port="localhost:2331"
+  &gdbserver_port="2331"
+  IF (CPUFAMILY()=="ARM")
+    &gdbserver_port="5531"
+  ELSE IF (CPUFAMILY()=="RISCV")
+    &gdbserver_port="6631"
+
+  &G_RCN_Baremetal_GDB_Port="localhost:&gdbserver_port"
   SYStem.PORT &G_RCN_Baremetal_GDB_Port
 
   RETURN
