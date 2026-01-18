@@ -1,6 +1,6 @@
 #!/bin/bash
 
-qemu-system-aarch64 -m 2G -M virt -cpu max \
+qemu-system-aarch64 -m 2G -M virt,mte=on -cpu max \
     -kernel /usr/lib/u-boot/qemu_arm64/uboot.elf \
     -append "root=LABEL=rootfs console=ttyS0" \
     -object rng-random,filename=/dev/urandom,id=rng \
