@@ -30,7 +30,7 @@ on_init_soc:
   RETURN
 )
 
-on_main:
+on_start:
 (
   sYmbol.SourcePATH.SetRecurseDir &G_RCN_PWD
 
