@@ -51,6 +51,7 @@ resize2fs /dev/vda1
 - 아래 명령을 이용해 QEMU 상에서 개발 환경을 구성한다.
 ```shell
 apt install -y \
+    adduser \
     build-essential \
     clang \
     gdb \
