@@ -33,6 +33,11 @@ on_init_soc:
   &G_RCN_Baremetal_GDB_Port="localhost:&gdbserver_port"
   SYStem.PORT &G_RCN_Baremetal_GDB_Port
 
+  RETURN
+)
+
+on_entry:
+(
   sYmbol.SourcePATH.SetRecurseDir &G_RCN_PWD
 
   RETURN
