@@ -1,4 +1,9 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 YOUNGJIN JOO (neoelec@gmail.com)
+
 B::
+
+ON ERROR DO &G_RCN_Path/error.cmm
 
 PRIVATE &E_Func &E_Args
 ENTRY &E_Func %LINE &E_Args
@@ -24,14 +29,10 @@ on_init_soc:
   ELSE IF (CPUFAMILY()=="RISCV")
     &gdbserver_port="6631"
 
+  &G_RCN_Default_Entry="main"
   &G_RCN_Baremetal_GDB_Port="localhost:&gdbserver_port"
   SYStem.PORT &G_RCN_Baremetal_GDB_Port
 
-  RETURN
-)
-
-on_start:
-(
   sYmbol.SourcePATH.SetRecurseDir &G_RCN_PWD
 
   RETURN
